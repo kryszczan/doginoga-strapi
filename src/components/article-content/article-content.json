@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_for-buyer_content_for-buyer_contents",
+  "info": {
+    "displayName": "for-buyer content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

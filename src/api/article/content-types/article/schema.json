@@ -1,0 +1,163 @@
+{
+  "kind": "collectionType",
+  "collectionName": "articles",
+  "info": {
+    "singularName": "article",
+    "pluralName": "articles",
+    "displayName": "Artykuły",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "article-content.article-content"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "string"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "menu_label": {
+      "type": "string",
+      "default": "Default: W tym artykule"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Podstawowy",
+        "Z dużym nagłówkiem"
+      ],
+      "default": "Podstawowy"
+    },
+    "aside_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    },
+    "page": {
+      "type": "enumeration",
+      "enum": [
+        "Dla nabywcy",
+        "Dla hodowcy",
+        "Dla administracji",
+        "Doginoga"
+      ]
+    },
+    "visibility": {
+      "type": "customField",
+      "options": [
+        "Strona główna - Nabywca",
+        "Strona główna - Hodowca",
+        "Strona główna - Standardy",
+        "Nabywca - Intro",
+        "Nabywca - Polecane",
+        "Nabywca - Wskazówki",
+        "Nabywca - Warto przeczytać",
+        "Nabywca - Dowiedz się więcej",
+        "Hodowca - Intro",
+        "Hodowca - Polecane",
+        "Hodowca - Wskazówki",
+        "Hodowca - Warto przeczytać",
+        "Hodowca - Dowiedz się więcej",
+        "Doginoga - Intro",
+        "Administracja - Intro"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "permission": {
+      "type": "customField",
+      "options": [
+        "Publiczny:public",
+        "Nabywca:client",
+        "Hodowca:breeder",
+        "Administracja:admin"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Dla nabywcy - Bezpieczeństwo",
+        "Dla nabywcy - Doginoga",
+        "Dla nabywcy - Informacje",
+        "Dla nabywcy - Pierwsze kroki",
+        "Dla nabywcy - Porady",
+        "Dla nabywcy - Pozostałe",
+        "Dla nabywcy - Standardy",
+        "Dla nabywcy - Transakcja",
+        "Dla nabywcy - Wskazówki",
+        "Dla nabywcy - Zakup psa",
+        "Dla hodowcy - Bezpieczeństwo",
+        "Dla hodowcy - Doginoga",
+        "Dla hodowcy - Informacje",
+        "Dla hodowcy - Pierwsze kroki",
+        "Dla hodowcy - Porady",
+        "Dla hodowcy - Pozostałe",
+        "Dla hodowcy - Standardy",
+        "Dla hodowcy - Transakcja",
+        "Dla hodowcy - Weryfikacja",
+        "Dla hodowcy - Wskazówki",
+        "Doginoga - Bezpieczeństwo",
+        "Doginoga - Doginoga",
+        "Doginoga - Informacje",
+        "Doginoga - Standardy",
+        "Doginoga - Pozostałe"
+      ]
+    },
+    "label": {
+      "type": "enumeration",
+      "enum": [
+        "Artykuł",
+        "Instrukcja",
+        "Poradnik",
+        "Przewodnik",
+        "Wskazówka"
+      ]
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "Brak",
+        "Artykuł (czarny)",
+        "Instrukcja (czarny)",
+        "Gwiazda (czarna)",
+        "Gwiazda (czerwona)",
+        "Gwiazda (niebieska)",
+        "Kłódka (otwarta)",
+        "Ogień (czarny)",
+        "Ogień (czerwony)",
+        "Porada (czarny)",
+        "Prawo (czarny)",
+        "Serce (czerwony)"
+      ]
+    },
+    "bottom_articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article"
+    }
+  }
+}
