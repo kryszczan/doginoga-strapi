@@ -477,13 +477,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToMany',
       'api::article.article'
     >;
-    subtitle: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      >;
+    subtitle: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
