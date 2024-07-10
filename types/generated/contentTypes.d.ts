@@ -376,7 +376,6 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   attributes: {
     title: Attribute.String & Attribute.Required;
     content: Attribute.Component<'article-content.article-content', true>;
-    subtitle: Attribute.Text;
     main_image: Attribute.Media<'images'>;
     slug: Attribute.String;
     seo: Attribute.Component<'shared.seo'>;
@@ -478,6 +477,13 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'oneToMany',
       'api::article.article'
     >;
+    subtitle: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

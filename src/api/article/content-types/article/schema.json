@@ -21,9 +21,6 @@
       "repeatable": true,
       "component": "article-content.article-content"
     },
-    "subtitle": {
-      "type": "text"
-    },
     "main_image": {
       "type": "media",
       "multiple": false,
@@ -158,6 +155,13 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article"
+    },
+    "subtitle": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
