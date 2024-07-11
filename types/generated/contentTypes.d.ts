@@ -379,8 +379,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     main_image: Attribute.Media<'images'>;
     slug: Attribute.String;
     seo: Attribute.Component<'shared.seo'>;
-    menu_label: Attribute.String &
-      Attribute.DefaultTo<'Default: W tym artykule'>;
+    menu_label: Attribute.String & Attribute.DefaultTo<'W tym artykule'>;
     type: Attribute.Enumeration<
       ['Podstawowy', 'Z du\u017Cym nag\u0142\u00F3wkiem']
     > &
@@ -478,6 +477,14 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       'api::article.article'
     >;
     subtitle: Attribute.Text;
+    card_image: Attribute.Media<'images'>;
+    subtitle_extras: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
