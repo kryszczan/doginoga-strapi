@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "regulaminies",
+  "info": {
+    "singularName": "regulaminy",
+    "pluralName": "regulaminies",
+    "displayName": "Regulaminy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "content": {
+      "type": "component",
+      "repeatable": true,
+      "component": "article-content.article-content"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Regulamin Platformy Doginoga",
+        "Polityka Prywatności",
+        "Polityka Cookies",
+        "Newsletter",
+        "Regulamin Rejestracji Konta Użytkownika",
+        "Regulamin Korzystania z Konta Użytkownika",
+        "Zasady Składania Odwołań oraz Rozwiązywania Sporów",
+        "Regulamin Rejestracji Konta Hodowcy",
+        "Regulamin Korzystania z Konta Hodowcy",
+        "Regulamin Weryfikacji Hodowli",
+        "Regulamin Opłat dla Hodowcy",
+        "Zasady Składania Odwołań oraz Rozwiązywanie Sporów"
+      ]
+    }
+  }
+}

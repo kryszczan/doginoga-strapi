@@ -7,6 +7,10 @@ module.exports = () => ({
           field: "slug",
           references: "title",
         },
+        legal: {
+          field: "slug",
+          references: "title",
+        },
       },
     },
   },

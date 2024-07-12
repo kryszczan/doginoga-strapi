@@ -503,6 +503,55 @@ export interface ApiArticleArticle extends Schema.CollectionType {
   };
 }
 
+export interface ApiRegulaminyRegulaminy extends Schema.CollectionType {
+  collectionName: 'regulaminies';
+  info: {
+    singularName: 'regulaminy';
+    pluralName: 'regulaminies';
+    displayName: 'Regulaminy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+    content: Attribute.Component<'article-content.article-content', true>;
+    category: Attribute.Enumeration<
+      [
+        'Regulamin Platformy Doginoga',
+        'Polityka Prywatno\u015Bci',
+        'Polityka Cookies',
+        'Newsletter',
+        'Regulamin Rejestracji Konta U\u017Cytkownika',
+        'Regulamin Korzystania z Konta U\u017Cytkownika',
+        'Zasady Sk\u0142adania Odwo\u0142a\u0144 oraz Rozwi\u0105zywania Spor\u00F3w',
+        'Regulamin Rejestracji Konta Hodowcy',
+        'Regulamin Korzystania z Konta Hodowcy',
+        'Regulamin Weryfikacji Hodowli',
+        'Regulamin Op\u0142at dla Hodowcy',
+        'Zasady Sk\u0142adania Odwo\u0142a\u0144 oraz Rozwi\u0105zywanie Spor\u00F3w'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::regulaminy.regulaminy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::regulaminy.regulaminy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -979,6 +1028,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'api::article.article': ApiArticleArticle;
+      'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
