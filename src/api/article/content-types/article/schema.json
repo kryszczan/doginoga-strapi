@@ -80,6 +80,10 @@
         "Hodowca - Warto przeczytać",
         "Hodowca - Dowiedz się więcej",
         "Doginoga - Intro",
+        "Doginoga - Polecane",
+        "Doginoga - Wskazówki",
+        "Doginoga - Warto przeczytać",
+        "Doginoga - Dowiedz się więcej",
         "Administracja - Intro"
       ],
       "customField": "plugin::multi-select.multi-select"

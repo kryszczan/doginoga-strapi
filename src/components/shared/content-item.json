@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_content_items",
+  "info": {
+    "displayName": "Content item",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "Czerwony",
+        "Zielony",
+        "Żółty",
+        "Niebieski"
+      ]
+    }
+  }
+}

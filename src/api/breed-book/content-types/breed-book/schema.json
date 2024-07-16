@@ -1,0 +1,176 @@
+{
+  "kind": "collectionType",
+  "collectionName": "breed_books",
+  "info": {
+    "singularName": "breed-book",
+    "pluralName": "breed-books",
+    "displayName": "Encyklopedia ras",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "height": {
+      "type": "component",
+      "repeatable": false,
+      "component": "race-article.from-to"
+    },
+    "weight": {
+      "type": "component",
+      "repeatable": false,
+      "component": "race-article.from-to"
+    },
+    "life_length": {
+      "type": "component",
+      "repeatable": false,
+      "component": "race-article.from-to"
+    },
+    "mature": {
+      "type": "component",
+      "repeatable": false,
+      "component": "race-article.from-to"
+    },
+    "shedding": {
+      "type": "string"
+    },
+    "for_allergy": {
+      "type": "enumeration",
+      "enum": [
+        "Tak",
+        "Nie"
+      ]
+    },
+    "noise": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "page": {
+      "type": "enumeration",
+      "enum": [
+        "Bardzo małe (do 4 kg)",
+        "Małe (5-10 kg)",
+        "Średnie (11-25 kg)",
+        "Duże (26-44 kg)",
+        "Bardzo duże (+45 kg)"
+      ]
+    },
+    "label": {
+      "type": "enumeration",
+      "enum": [
+        "Bardzo małe",
+        "Małe",
+        "Średnie",
+        "Duże",
+        "Bardzo dużo"
+      ]
+    },
+    "main_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "background_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "profile_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "card_photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "fci_group": {
+      "type": "string"
+    },
+    "fci_section": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string"
+    },
+    "characteristic": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "education": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "space_to_live": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "children_friendly": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "animal_friendly": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "care": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "travel": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "health": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "activity": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    },
+    "security": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.content-item"
+    }
+  }
+}

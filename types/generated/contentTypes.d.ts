@@ -362,196 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiArticleArticle extends Schema.CollectionType {
-  collectionName: 'articles';
-  info: {
-    singularName: 'article';
-    pluralName: 'articles';
-    displayName: 'Artyku\u0142y';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String & Attribute.Required;
-    content: Attribute.Component<'article-content.article-content', true>;
-    main_image: Attribute.Media<'images'>;
-    slug: Attribute.String;
-    seo: Attribute.Component<'shared.seo'>;
-    menu_label: Attribute.String & Attribute.DefaultTo<'W tym artykule'>;
-    type: Attribute.Enumeration<
-      ['Podstawowy', 'Z du\u017Cym nag\u0142\u00F3wkiem']
-    > &
-      Attribute.DefaultTo<'Podstawowy'>;
-    aside_articles: Attribute.Relation<
-      'api::article.article',
-      'oneToMany',
-      'api::article.article'
-    >;
-    page: Attribute.Enumeration<
-      ['Dla nabywcy', 'Dla hodowcy', 'Dla administracji', 'Doginoga']
-    >;
-    visibility: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'Strona g\u0142\u00F3wna - Nabywca',
-          'Strona g\u0142\u00F3wna - Hodowca',
-          'Strona g\u0142\u00F3wna - Standardy',
-          'Nabywca - Intro',
-          'Nabywca - Polecane',
-          'Nabywca - Wskaz\u00F3wki',
-          'Nabywca - Warto przeczyta\u0107',
-          'Nabywca - Dowiedz si\u0119 wi\u0119cej',
-          'Hodowca - Intro',
-          'Hodowca - Polecane',
-          'Hodowca - Wskaz\u00F3wki',
-          'Hodowca - Warto przeczyta\u0107',
-          'Hodowca - Dowiedz si\u0119 wi\u0119cej',
-          'Doginoga - Intro',
-          'Administracja - Intro'
-        ]
-      >;
-    permission: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'Publiczny:public',
-          'Nabywca:client',
-          'Hodowca:breeder',
-          'Administracja:admin'
-        ]
-      >;
-    category: Attribute.Enumeration<
-      [
-        'Dla nabywcy - Bezpiecze\u0144stwo',
-        'Dla nabywcy - Doginoga',
-        'Dla nabywcy - Informacje',
-        'Dla nabywcy - Pierwsze kroki',
-        'Dla nabywcy - Porady',
-        'Dla nabywcy - Pozosta\u0142e',
-        'Dla nabywcy - Standardy',
-        'Dla nabywcy - Transakcja',
-        'Dla nabywcy - Wskaz\u00F3wki',
-        'Dla nabywcy - Zakup psa',
-        'Dla hodowcy - Bezpiecze\u0144stwo',
-        'Dla hodowcy - Doginoga',
-        'Dla hodowcy - Informacje',
-        'Dla hodowcy - Pierwsze kroki',
-        'Dla hodowcy - Porady',
-        'Dla hodowcy - Pozosta\u0142e',
-        'Dla hodowcy - Standardy',
-        'Dla hodowcy - Transakcja',
-        'Dla hodowcy - Weryfikacja',
-        'Dla hodowcy - Wskaz\u00F3wki',
-        'Doginoga - Bezpiecze\u0144stwo',
-        'Doginoga - Doginoga',
-        'Doginoga - Informacje',
-        'Doginoga - Standardy',
-        'Doginoga - Pozosta\u0142e'
-      ]
-    >;
-    label: Attribute.Enumeration<
-      ['Artyku\u0142', 'Instrukcja', 'Poradnik', 'Przewodnik', 'Wskaz\u00F3wka']
-    >;
-    icon: Attribute.Enumeration<
-      [
-        'Brak',
-        'Artyku\u0142 (czarny)',
-        'Instrukcja (czarny)',
-        'Gwiazda (czarna)',
-        'Gwiazda (czerwona)',
-        'Gwiazda (niebieska)',
-        'K\u0142\u00F3dka (otwarta)',
-        'Ogie\u0144 (czarny)',
-        'Ogie\u0144 (czerwony)',
-        'Porada (czarny)',
-        'Prawo (czarny)',
-        'Serce (czerwony)'
-      ]
-    >;
-    bottom_articles: Attribute.Relation<
-      'api::article.article',
-      'oneToMany',
-      'api::article.article'
-    >;
-    subtitle: Attribute.Text;
-    card_image: Attribute.Media<'images'>;
-    subtitle_extras: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor5.CKEditor',
-        {
-          preset: 'toolbar';
-        }
-      >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::article.article',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::article.article',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiRegulaminyRegulaminy extends Schema.CollectionType {
-  collectionName: 'regulaminies';
-  info: {
-    singularName: 'regulaminy';
-    pluralName: 'regulaminies';
-    displayName: 'Regulaminy';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    slug: Attribute.String;
-    content: Attribute.Component<'article-content.article-content', true>;
-    category: Attribute.Enumeration<
-      [
-        'Regulamin Platformy Doginoga',
-        'Polityka Prywatno\u015Bci',
-        'Polityka Cookies',
-        'Newsletter',
-        'Regulamin Rejestracji Konta U\u017Cytkownika',
-        'Regulamin Korzystania z Konta U\u017Cytkownika',
-        'Zasady Sk\u0142adania Odwo\u0142a\u0144 oraz Rozwi\u0105zywania Spor\u00F3w',
-        'Regulamin Rejestracji Konta Hodowcy',
-        'Regulamin Korzystania z Konta Hodowcy',
-        'Regulamin Weryfikacji Hodowli',
-        'Regulamin Op\u0142at dla Hodowcy',
-        'Zasady Sk\u0142adania Odwo\u0142a\u0144 oraz Rozwi\u0105zywanie Spor\u00F3w'
-      ]
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::regulaminy.regulaminy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::regulaminy.regulaminy',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -1017,6 +827,275 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiArticleArticle extends Schema.CollectionType {
+  collectionName: 'articles';
+  info: {
+    singularName: 'article';
+    pluralName: 'articles';
+    displayName: 'Artyku\u0142y';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.Component<'article-content.article-content', true>;
+    main_image: Attribute.Media<'images'>;
+    slug: Attribute.String;
+    seo: Attribute.Component<'shared.seo'>;
+    menu_label: Attribute.String & Attribute.DefaultTo<'W tym artykule'>;
+    type: Attribute.Enumeration<
+      ['Podstawowy', 'Z du\u017Cym nag\u0142\u00F3wkiem']
+    > &
+      Attribute.DefaultTo<'Podstawowy'>;
+    aside_articles: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::article.article'
+    >;
+    page: Attribute.Enumeration<
+      ['Dla nabywcy', 'Dla hodowcy', 'Dla administracji', 'Doginoga']
+    >;
+    visibility: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Strona g\u0142\u00F3wna - Nabywca',
+          'Strona g\u0142\u00F3wna - Hodowca',
+          'Strona g\u0142\u00F3wna - Standardy',
+          'Nabywca - Intro',
+          'Nabywca - Polecane',
+          'Nabywca - Wskaz\u00F3wki',
+          'Nabywca - Warto przeczyta\u0107',
+          'Nabywca - Dowiedz si\u0119 wi\u0119cej',
+          'Hodowca - Intro',
+          'Hodowca - Polecane',
+          'Hodowca - Wskaz\u00F3wki',
+          'Hodowca - Warto przeczyta\u0107',
+          'Hodowca - Dowiedz si\u0119 wi\u0119cej',
+          'Doginoga - Intro',
+          'Doginoga - Polecane',
+          'Doginoga - Wskaz\u00F3wki',
+          'Doginoga - Warto przeczyta\u0107',
+          'Doginoga - Dowiedz si\u0119 wi\u0119cej',
+          'Administracja - Intro'
+        ]
+      >;
+    permission: Attribute.JSON &
+      Attribute.CustomField<
+        'plugin::multi-select.multi-select',
+        [
+          'Publiczny:public',
+          'Nabywca:client',
+          'Hodowca:breeder',
+          'Administracja:admin'
+        ]
+      >;
+    category: Attribute.Enumeration<
+      [
+        'Dla nabywcy - Bezpiecze\u0144stwo',
+        'Dla nabywcy - Doginoga',
+        'Dla nabywcy - Informacje',
+        'Dla nabywcy - Pierwsze kroki',
+        'Dla nabywcy - Porady',
+        'Dla nabywcy - Pozosta\u0142e',
+        'Dla nabywcy - Standardy',
+        'Dla nabywcy - Transakcja',
+        'Dla nabywcy - Wskaz\u00F3wki',
+        'Dla nabywcy - Zakup psa',
+        'Dla hodowcy - Bezpiecze\u0144stwo',
+        'Dla hodowcy - Doginoga',
+        'Dla hodowcy - Informacje',
+        'Dla hodowcy - Pierwsze kroki',
+        'Dla hodowcy - Porady',
+        'Dla hodowcy - Pozosta\u0142e',
+        'Dla hodowcy - Standardy',
+        'Dla hodowcy - Transakcja',
+        'Dla hodowcy - Weryfikacja',
+        'Dla hodowcy - Wskaz\u00F3wki',
+        'Doginoga - Bezpiecze\u0144stwo',
+        'Doginoga - Doginoga',
+        'Doginoga - Informacje',
+        'Doginoga - Standardy',
+        'Doginoga - Pozosta\u0142e'
+      ]
+    >;
+    label: Attribute.Enumeration<
+      ['Artyku\u0142', 'Instrukcja', 'Poradnik', 'Przewodnik', 'Wskaz\u00F3wka']
+    >;
+    icon: Attribute.Enumeration<
+      [
+        'Brak',
+        'Artyku\u0142 (czarny)',
+        'Instrukcja (czarny)',
+        'Gwiazda (czarna)',
+        'Gwiazda (czerwona)',
+        'Gwiazda (niebieska)',
+        'K\u0142\u00F3dka (otwarta)',
+        'Ogie\u0144 (czarny)',
+        'Ogie\u0144 (czerwony)',
+        'Porada (czarny)',
+        'Prawo (czarny)',
+        'Serce (czerwony)'
+      ]
+    >;
+    bottom_articles: Attribute.Relation<
+      'api::article.article',
+      'oneToMany',
+      'api::article.article'
+    >;
+    subtitle: Attribute.Text;
+    card_image: Attribute.Media<'images'>;
+    subtitle_extras: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBreedBookBreedBook extends Schema.CollectionType {
+  collectionName: 'breed_books';
+  info: {
+    singularName: 'breed-book';
+    pluralName: 'breed-books';
+    displayName: 'Encyklopedia ras';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+    height: Attribute.Component<'race-article.from-to'>;
+    weight: Attribute.Component<'race-article.from-to'>;
+    life_length: Attribute.Component<'race-article.from-to'>;
+    mature: Attribute.Component<'race-article.from-to'>;
+    shedding: Attribute.String;
+    for_allergy: Attribute.Enumeration<['Tak', 'Nie']>;
+    noise: Attribute.Component<'shared.content-item'>;
+    page: Attribute.Enumeration<
+      [
+        'Bardzo ma\u0142e (do 4 kg)',
+        'Ma\u0142e (5-10 kg)',
+        '\u015Arednie (11-25 kg)',
+        'Du\u017Ce (26-44 kg)',
+        'Bardzo du\u017Ce (+45 kg)'
+      ]
+    >;
+    label: Attribute.Enumeration<
+      [
+        'Bardzo ma\u0142e',
+        'Ma\u0142e',
+        '\u015Arednie',
+        'Du\u017Ce',
+        'Bardzo du\u017Co'
+      ]
+    >;
+    main_photo: Attribute.Media<'images'>;
+    background_photo: Attribute.Media<'images'>;
+    profile_photo: Attribute.Media<'images'>;
+    card_photo: Attribute.Media<'images'>;
+    gallery: Attribute.Media<'images', true>;
+    fci_group: Attribute.String;
+    fci_section: Attribute.String;
+    country: Attribute.String;
+    characteristic: Attribute.Component<'shared.content-item'>;
+    education: Attribute.Component<'shared.content-item'>;
+    space_to_live: Attribute.Component<'shared.content-item'>;
+    children_friendly: Attribute.Component<'shared.content-item'>;
+    animal_friendly: Attribute.Component<'shared.content-item'>;
+    care: Attribute.Component<'shared.content-item'>;
+    travel: Attribute.Component<'shared.content-item'>;
+    health: Attribute.Component<'shared.content-item'>;
+    activity: Attribute.Component<'shared.content-item'>;
+    security: Attribute.Component<'shared.content-item'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::breed-book.breed-book',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::breed-book.breed-book',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiRegulaminyRegulaminy extends Schema.CollectionType {
+  collectionName: 'regulaminies';
+  info: {
+    singularName: 'regulaminy';
+    pluralName: 'regulaminies';
+    displayName: 'Regulaminy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    slug: Attribute.String;
+    content: Attribute.Component<'article-content.article-content', true>;
+    category: Attribute.Enumeration<
+      [
+        'Regulamin Platformy Doginoga',
+        'Polityka Prywatno\u015Bci',
+        'Polityka Cookies',
+        'Newsletter',
+        'Regulamin Rejestracji Konta U\u017Cytkownika',
+        'Regulamin Korzystania z Konta U\u017Cytkownika',
+        'Zasady Sk\u0142adania Odwo\u0142a\u0144 oraz Rozwi\u0105zywania Spor\u00F3w',
+        'Regulamin Rejestracji Konta Hodowcy',
+        'Regulamin Korzystania z Konta Hodowcy',
+        'Regulamin Weryfikacji Hodowli',
+        'Regulamin Op\u0142at dla Hodowcy',
+        'Zasady Sk\u0142adania Odwo\u0142a\u0144 oraz Rozwi\u0105zywanie Spor\u00F3w'
+      ]
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::regulaminy.regulaminy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::regulaminy.regulaminy',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1027,8 +1106,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::article.article': ApiArticleArticle;
-      'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -1038,6 +1115,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::article.article': ApiArticleArticle;
+      'api::breed-book.breed-book': ApiBreedBookBreedBook;
+      'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
     }
   }
 }

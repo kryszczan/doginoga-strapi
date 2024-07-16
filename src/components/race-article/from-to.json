@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_shared_from_tos",
+  "info": {
+    "displayName": "from_to",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "male_from": {
+      "type": "float"
+    },
+    "male_to": {
+      "type": "float"
+    },
+    "female_from": {
+      "type": "float"
+    },
+    "female_to": {
+      "type": "float"
+    }
+  }
+}
