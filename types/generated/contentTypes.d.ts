@@ -1029,6 +1029,12 @@ export interface ApiBreedBookBreedBook extends Schema.CollectionType {
     health: Attribute.Component<'shared.content-item'>;
     activity: Attribute.Component<'shared.content-item'>;
     security: Attribute.Component<'shared.content-item'>;
+    characters: Attribute.Relation<
+      'api::breed-book.breed-book',
+      'oneToMany',
+      'api::character.character'
+    >;
+    noise_text: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1040,6 +1046,45 @@ export interface ApiBreedBookBreedBook extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::breed-book.breed-book',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiCharacterCharacter extends Schema.CollectionType {
+  collectionName: 'characters';
+  info: {
+    singularName: 'character';
+    pluralName: 'characters';
+    displayName: 'Cechy charakteru';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    slug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::character.character',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::character.character',
       'oneToOne',
       'admin::user'
     > &
@@ -1117,6 +1162,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::article.article': ApiArticleArticle;
       'api::breed-book.breed-book': ApiBreedBookBreedBook;
+      'api::character.character': ApiCharacterCharacter;
       'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
     }
   }

@@ -15,6 +15,10 @@ module.exports = () => ({
           field: "slug",
           references: "title",
         },
+        character: {
+          field: "slug",
+          references: "title",
+        },
       },
     },
   },

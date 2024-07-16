@@ -171,6 +171,14 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.content-item"
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::character.character"
+    },
+    "noise_text": {
+      "type": "string"
     }
   }
 }
