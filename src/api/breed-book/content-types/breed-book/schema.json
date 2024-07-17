@@ -179,6 +179,16 @@
     },
     "noise_text": {
       "type": "string"
+    },
+    "diseases": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::disease.disease"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.faq-content"
     }
   }
 }

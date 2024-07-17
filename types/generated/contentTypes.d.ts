@@ -1035,6 +1035,12 @@ export interface ApiBreedBookBreedBook extends Schema.CollectionType {
       'api::character.character'
     >;
     noise_text: Attribute.String;
+    diseases: Attribute.Relation<
+      'api::breed-book.breed-book',
+      'oneToMany',
+      'api::disease.disease'
+    >;
+    faq: Attribute.Component<'shared.faq-content'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1085,6 +1091,44 @@ export interface ApiCharacterCharacter extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::character.character',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDiseaseDisease extends Schema.CollectionType {
+  collectionName: 'diseases';
+  info: {
+    singularName: 'disease';
+    pluralName: 'diseases';
+    displayName: 'Choroby';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    slug: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::disease.disease',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::disease.disease',
       'oneToOne',
       'admin::user'
     > &
@@ -1163,6 +1207,7 @@ declare module '@strapi/types' {
       'api::article.article': ApiArticleArticle;
       'api::breed-book.breed-book': ApiBreedBookBreedBook;
       'api::character.character': ApiCharacterCharacter;
+      'api::disease.disease': ApiDiseaseDisease;
       'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
     }
   }

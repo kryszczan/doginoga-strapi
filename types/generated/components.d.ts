@@ -18,6 +18,24 @@ export interface ArticleContentArticleContent extends Schema.Component {
   };
 }
 
+export interface RaceArticleFaqItem extends Schema.Component {
+  collectionName: 'components_shared_faq_items';
+  info: {
+    displayName: 'Faq item';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+  };
+}
+
 export interface RaceArticleFromTo extends Schema.Component {
   collectionName: 'components_shared_from_tos';
   info: {
@@ -53,20 +71,22 @@ export interface SharedContentItem extends Schema.Component {
   };
 }
 
-export interface SharedInformacjeORasie extends Schema.Component {
-  collectionName: 'components_shared_informacje_o_rasies';
+export interface SharedFaqContent extends Schema.Component {
+  collectionName: 'components_article_content_faq_contents';
   info: {
-    displayName: 'Informacje o rasie';
+    displayName: 'Faq content';
     description: '';
   };
   attributes: {
-    fci_group: Attribute.String;
-    fci_section: Attribute.String;
-    country: Attribute.String;
-    height_female_from: Attribute.Float;
-    height_female_to: Attribute.Float;
-    height_male_from: Attribute.Float;
-    height_male_to: Attribute.Float;
+    subtitle: Attribute.String;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    faq_items: Attribute.Component<'race-article.faq-item', true>;
   };
 }
 
@@ -90,19 +110,6 @@ export interface SharedMetaSocial extends Schema.Component {
         maxLength: 65;
       }>;
     image: Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
-export interface SharedRaceHeight extends Schema.Component {
-  collectionName: 'components_shared_race_heights';
-  info: {
-    displayName: 'race_height';
-  };
-  attributes: {
-    male_from: Attribute.Float;
-    male_to: Attribute.Float;
-    female_from: Attribute.Float;
-    female_to: Attribute.Float;
   };
 }
 
@@ -138,11 +145,11 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'article-content.article-content': ArticleContentArticleContent;
+      'race-article.faq-item': RaceArticleFaqItem;
       'race-article.from-to': RaceArticleFromTo;
       'shared.content-item': SharedContentItem;
-      'shared.informacje-o-rasie': SharedInformacjeORasie;
+      'shared.faq-content': SharedFaqContent;
       'shared.meta-social': SharedMetaSocial;
-      'shared.race-height': SharedRaceHeight;
       'shared.seo': SharedSeo;
     }
   }

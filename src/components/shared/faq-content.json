@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_article_content_faq_contents",
+  "info": {
+    "displayName": "Faq content",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "faq_items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "race-article.faq-item"
+    }
+  }
+}

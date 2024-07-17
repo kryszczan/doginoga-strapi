@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "diseases",
+  "info": {
+    "singularName": "disease",
+    "pluralName": "diseases",
+    "displayName": "Choroby"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}
