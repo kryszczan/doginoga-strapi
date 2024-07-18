@@ -16,6 +16,16 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.baner-doginoga"
+    },
+    "how_its_works": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.how-its-works-item"
+    },
+    "baner_mobile": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.baner-mobile"
     }
   }
 }

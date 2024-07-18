@@ -1190,6 +1190,8 @@ export interface ApiHomeHome extends Schema.SingleType {
   };
   attributes: {
     baner_doginoga: Attribute.Component<'shared.baner-doginoga'>;
+    how_its_works: Attribute.Component<'shared.how-its-works-item', true>;
+    baner_mobile: Attribute.Component<'shared.baner-mobile'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

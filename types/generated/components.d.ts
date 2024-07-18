@@ -149,14 +149,18 @@ export interface SharedFooterLinks extends Schema.Component {
   };
 }
 
-export interface SharedHowItsWorking extends Schema.Component {
-  collectionName: 'components_shared_how_its_workings';
+export interface SharedHowItsWorksItem extends Schema.Component {
+  collectionName: 'components_shared_how_its_works_items';
   info: {
-    displayName: 'How its works';
-    description: '';
+    displayName: 'How its works item';
   };
   attributes: {
-    test: Attribute.String;
+    subtitle: Attribute.String;
+    title: Attribute.String;
+    text: Attribute.Text;
+    url: Attribute.String;
+    section_title: Attribute.String;
+    photo: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -224,7 +228,7 @@ declare module '@strapi/types' {
       'shared.footer-column': SharedFooterColumn;
       'shared.footer-item': SharedFooterItem;
       'shared.footer-links': SharedFooterLinks;
-      'shared.how-its-working': SharedHowItsWorking;
+      'shared.how-its-works-item': SharedHowItsWorksItem;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
     }
