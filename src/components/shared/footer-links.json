@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_footer_links",
+  "info": {
+    "displayName": "Footer links"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

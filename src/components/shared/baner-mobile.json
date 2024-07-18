@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_baner_mobiles",
+  "info": {
+    "displayName": "Baner mobile"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "apple_url": {
+      "type": "string"
+    },
+    "android_url": {
+      "type": "string"
+    }
+  }
+}

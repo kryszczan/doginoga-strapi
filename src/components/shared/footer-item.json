@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_footer_items",
+  "info": {
+    "displayName": "Footer item"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

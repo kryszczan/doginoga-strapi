@@ -50,6 +50,30 @@ export interface RaceArticleFromTo extends Schema.Component {
   };
 }
 
+export interface SharedBanerDoginoga extends Schema.Component {
+  collectionName: 'components_shared_baner_doginogas';
+  info: {
+    displayName: 'Baner doginoga';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+  };
+}
+
+export interface SharedBanerMobile extends Schema.Component {
+  collectionName: 'components_shared_baner_mobiles';
+  info: {
+    displayName: 'Baner mobile';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    apple_url: Attribute.String;
+    android_url: Attribute.String;
+  };
+}
+
 export interface SharedContentItem extends Schema.Component {
   collectionName: 'components_shared_content_items';
   info: {
@@ -87,6 +111,52 @@ export interface SharedFaqContent extends Schema.Component {
         }
       >;
     faq_items: Attribute.Component<'race-article.faq-item', true>;
+  };
+}
+
+export interface SharedFooterColumn extends Schema.Component {
+  collectionName: 'components_shared_footer_columns';
+  info: {
+    displayName: 'Footer column';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String;
+    items: Attribute.Component<'shared.footer-item', true>;
+    url: Attribute.String;
+  };
+}
+
+export interface SharedFooterItem extends Schema.Component {
+  collectionName: 'components_shared_footer_items';
+  info: {
+    displayName: 'Footer item';
+  };
+  attributes: {
+    name: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
+export interface SharedFooterLinks extends Schema.Component {
+  collectionName: 'components_shared_footer_links';
+  info: {
+    displayName: 'Footer links';
+  };
+  attributes: {
+    name: Attribute.String;
+    url: Attribute.String;
+  };
+}
+
+export interface SharedHowItsWorking extends Schema.Component {
+  collectionName: 'components_shared_how_its_workings';
+  info: {
+    displayName: 'How its works';
+    description: '';
+  };
+  attributes: {
+    test: Attribute.String;
   };
 }
 
@@ -147,8 +217,14 @@ declare module '@strapi/types' {
       'article-content.article-content': ArticleContentArticleContent;
       'race-article.faq-item': RaceArticleFaqItem;
       'race-article.from-to': RaceArticleFromTo;
+      'shared.baner-doginoga': SharedBanerDoginoga;
+      'shared.baner-mobile': SharedBanerMobile;
       'shared.content-item': SharedContentItem;
       'shared.faq-content': SharedFaqContent;
+      'shared.footer-column': SharedFooterColumn;
+      'shared.footer-item': SharedFooterItem;
+      'shared.footer-links': SharedFooterLinks;
+      'shared.how-its-working': SharedHowItsWorking;
       'shared.meta-social': SharedMetaSocial;
       'shared.seo': SharedSeo;
     }

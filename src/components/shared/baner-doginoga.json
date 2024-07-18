@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_baner_doginogas",
+  "info": {
+    "displayName": "Baner doginoga"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

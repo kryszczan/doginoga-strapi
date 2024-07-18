@@ -1136,6 +1136,70 @@ export interface ApiDiseaseDisease extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterFooter extends Schema.SingleType {
+  collectionName: 'footers';
+  info: {
+    singularName: 'footer';
+    pluralName: 'footers';
+    displayName: 'Stopka';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    footer_content: Attribute.Component<'shared.footer-column', true>;
+    facebook: Attribute.String;
+    instagram: Attribute.String;
+    links_items: Attribute.Component<'shared.footer-links', true>;
+    bottom_text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer.footer',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHomeHome extends Schema.SingleType {
+  collectionName: 'homes';
+  info: {
+    singularName: 'home';
+    pluralName: 'homes';
+    displayName: 'Strona g\u0142\u00F3wna';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    baner_doginoga: Attribute.Component<'shared.baner-doginoga'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::home.home', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiRegulaminyRegulaminy extends Schema.CollectionType {
   collectionName: 'regulaminies';
   info: {
@@ -1208,6 +1272,8 @@ declare module '@strapi/types' {
       'api::breed-book.breed-book': ApiBreedBookBreedBook;
       'api::character.character': ApiCharacterCharacter;
       'api::disease.disease': ApiDiseaseDisease;
+      'api::footer.footer': ApiFooterFooter;
+      'api::home.home': ApiHomeHome;
       'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
     }
   }
