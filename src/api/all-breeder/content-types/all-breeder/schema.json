@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_breeders",
+  "info": {
+    "singularName": "all-breeder",
+    "pluralName": "all-breeders",
+    "displayName": "Wszystkie hodowle",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

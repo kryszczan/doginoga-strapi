@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_puppies",
+  "info": {
+    "singularName": "all-puppie",
+    "pluralName": "all-puppies",
+    "displayName": "Wszystkie szczenięta"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

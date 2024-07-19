@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "about_doginogas",
+  "info": {
+    "singularName": "about-doginoga",
+    "pluralName": "about-doginogas",
+    "displayName": "O doginoga",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "seo_subject": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "breeds",
+  "info": {
+    "singularName": "breed",
+    "pluralName": "breeds",
+    "displayName": "Encyklopedia ras"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

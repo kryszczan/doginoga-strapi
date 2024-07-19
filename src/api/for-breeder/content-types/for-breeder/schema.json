@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "for_breeders",
+  "info": {
+    "singularName": "for-breeder",
+    "pluralName": "for-breeders",
+    "displayName": "Dla hodowcy",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    },
+    "seo_subject": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.seo"
+    }
+  }
+}

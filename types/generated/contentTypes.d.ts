@@ -827,6 +827,99 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiAboutDoginogaAboutDoginoga extends Schema.SingleType {
+  collectionName: 'about_doginogas';
+  info: {
+    singularName: 'about-doginoga';
+    pluralName: 'about-doginogas';
+    displayName: 'O doginoga';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    seo_subject: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::about-doginoga.about-doginoga',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::about-doginoga.about-doginoga',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAllBreederAllBreeder extends Schema.SingleType {
+  collectionName: 'all_breeders';
+  info: {
+    singularName: 'all-breeder';
+    pluralName: 'all-breeders';
+    displayName: 'Wszystkie hodowle';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::all-breeder.all-breeder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::all-breeder.all-breeder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiAllPuppieAllPuppie extends Schema.SingleType {
+  collectionName: 'all_puppies';
+  info: {
+    singularName: 'all-puppie';
+    pluralName: 'all-puppies';
+    displayName: 'Wszystkie szczeni\u0119ta';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::all-puppie.all-puppie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::all-puppie.all-puppie',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiArticleArticle extends Schema.CollectionType {
   collectionName: 'articles';
   info: {
@@ -965,6 +1058,36 @@ export interface ApiArticleArticle extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::article.article',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBreedBreed extends Schema.SingleType {
+  collectionName: 'breeds';
+  info: {
+    singularName: 'breed';
+    pluralName: 'breeds';
+    displayName: 'Encyklopedia ras';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::breed.breed',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::breed.breed',
       'oneToOne',
       'admin::user'
     > &
@@ -1177,6 +1300,70 @@ export interface ApiFooterFooter extends Schema.SingleType {
   };
 }
 
+export interface ApiForBreederForBreeder extends Schema.SingleType {
+  collectionName: 'for_breeders';
+  info: {
+    singularName: 'for-breeder';
+    pluralName: 'for-breeders';
+    displayName: 'Dla hodowcy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    main_seo: Attribute.Component<'shared.seo'>;
+    seo_subject: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::for-breeder.for-breeder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::for-breeder.for-breeder',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiForClientForClient extends Schema.SingleType {
+  collectionName: 'for_clients';
+  info: {
+    singularName: 'for-client';
+    pluralName: 'for-clients';
+    displayName: 'Dla nabywcy';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    seo: Attribute.Component<'shared.seo'>;
+    seo_subject: Attribute.Component<'shared.seo'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::for-client.for-client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::for-client.for-client',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomeHome extends Schema.SingleType {
   collectionName: 'homes';
   info: {
@@ -1192,6 +1379,7 @@ export interface ApiHomeHome extends Schema.SingleType {
     baner_doginoga: Attribute.Component<'shared.baner-doginoga'>;
     how_its_works: Attribute.Component<'shared.how-its-works-item', true>;
     baner_mobile: Attribute.Component<'shared.baner-mobile'>;
+    seo: Attribute.Component<'shared.seo'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1270,11 +1458,17 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::about-doginoga.about-doginoga': ApiAboutDoginogaAboutDoginoga;
+      'api::all-breeder.all-breeder': ApiAllBreederAllBreeder;
+      'api::all-puppie.all-puppie': ApiAllPuppieAllPuppie;
       'api::article.article': ApiArticleArticle;
+      'api::breed.breed': ApiBreedBreed;
       'api::breed-book.breed-book': ApiBreedBookBreedBook;
       'api::character.character': ApiCharacterCharacter;
       'api::disease.disease': ApiDiseaseDisease;
       'api::footer.footer': ApiFooterFooter;
+      'api::for-breeder.for-breeder': ApiForBreederForBreeder;
+      'api::for-client.for-client': ApiForClientForClient;
       'api::home.home': ApiHomeHome;
       'api::regulaminy.regulaminy': ApiRegulaminyRegulaminy;
     }
