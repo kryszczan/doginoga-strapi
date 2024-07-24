@@ -841,6 +841,7 @@ export interface ApiAboutDoginogaAboutDoginoga extends Schema.SingleType {
   attributes: {
     seo: Attribute.Component<'shared.seo'>;
     seo_subject: Attribute.Component<'shared.seo'>;
+    hero_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -972,7 +973,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           'Doginoga - Wskaz\u00F3wki',
           'Doginoga - Warto przeczyta\u0107',
           'Doginoga - Dowiedz si\u0119 wi\u0119cej',
-          'Administracja - Intro'
+          'Administracja - Intro',
+          'Panel klienta - Dashboard'
         ]
       >;
     permission: Attribute.JSON &
@@ -1047,6 +1049,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           preset: 'toolbar';
         }
       >;
+    sort: Attribute.BigInteger;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1071,12 +1074,18 @@ export interface ApiBreedBreed extends Schema.SingleType {
     singularName: 'breed';
     pluralName: 'breeds';
     displayName: 'Encyklopedia ras';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     seo: Attribute.Component<'shared.seo'>;
+    header: Attribute.Text;
+    text: Attribute.Text;
+    hero_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link_text: Attribute.String;
+    link_href: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1314,6 +1323,7 @@ export interface ApiForBreederForBreeder extends Schema.SingleType {
   attributes: {
     main_seo: Attribute.Component<'shared.seo'>;
     seo_subject: Attribute.Component<'shared.seo'>;
+    hero_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1346,6 +1356,7 @@ export interface ApiForClientForClient extends Schema.SingleType {
   attributes: {
     seo: Attribute.Component<'shared.seo'>;
     seo_subject: Attribute.Component<'shared.seo'>;
+    hero_image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1380,6 +1391,14 @@ export interface ApiHomeHome extends Schema.SingleType {
     how_its_works: Attribute.Component<'shared.how-its-works-item', true>;
     baner_mobile: Attribute.Component<'shared.baner-mobile'>;
     seo: Attribute.Component<'shared.seo'>;
+    puppies_hero_image: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    breeders_hero_image: Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    puppies_hero_header: Attribute.Text;
+    breeders_hero_header: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

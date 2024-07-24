@@ -4,7 +4,8 @@
   "info": {
     "singularName": "breed",
     "pluralName": "breeds",
-    "displayName": "Encyklopedia ras"
+    "displayName": "Encyklopedia ras",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,29 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "header": {
+      "type": "text"
+    },
+    "text": {
+      "type": "text"
+    },
+    "hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "link_text": {
+      "type": "string"
+    },
+    "link_href": {
+      "type": "string"
     }
   }
 }

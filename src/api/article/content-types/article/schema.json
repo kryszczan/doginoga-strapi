@@ -84,7 +84,8 @@
         "Doginoga - Wskazówki",
         "Doginoga - Warto przeczytać",
         "Doginoga - Dowiedz się więcej",
-        "Administracja - Intro"
+        "Administracja - Intro",
+        "Panel klienta - Dashboard"
       ],
       "customField": "plugin::multi-select.multi-select"
     },
@@ -177,6 +178,9 @@
         "preset": "toolbar"
       },
       "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "sort": {
+      "type": "biginteger"
     }
   }
 }

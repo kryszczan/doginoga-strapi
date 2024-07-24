@@ -31,6 +31,34 @@
       "type": "component",
       "repeatable": false,
       "component": "shared.seo"
+    },
+    "puppies_hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "breeders_hero_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "puppies_hero_header": {
+      "type": "text"
+    },
+    "breeders_hero_header": {
+      "type": "text"
     }
   }
 }
