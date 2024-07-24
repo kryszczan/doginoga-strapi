@@ -974,7 +974,8 @@ export interface ApiArticleArticle extends Schema.CollectionType {
           'Doginoga - Warto przeczyta\u0107',
           'Doginoga - Dowiedz si\u0119 wi\u0119cej',
           'Administracja - Intro',
-          'Panel klienta - Dashboard'
+          'Panel klienta - Slider',
+          'Panel klienta - Dodatkowe'
         ]
       >;
     permission: Attribute.JSON &

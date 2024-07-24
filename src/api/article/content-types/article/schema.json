@@ -85,7 +85,8 @@
         "Doginoga - Warto przeczytać",
         "Doginoga - Dowiedz się więcej",
         "Administracja - Intro",
-        "Panel klienta - Dashboard"
+        "Panel klienta - Slider",
+        "Panel klienta - Dodatkowe"
       ],
       "customField": "plugin::multi-select.multi-select"
     },
